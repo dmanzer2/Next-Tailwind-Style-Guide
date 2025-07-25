@@ -1,4 +1,6 @@
-# Build and Bloom Style Guide
+# Next.js Tailwind Style Guide
+
+This style guide showcases a modern design system built with Next.js, TypeScript, and Tailwind CSS. It provides a comprehensive foundation for building consistent, accessible user interfaces.
 
 This document explains how to customize the style guide for your project using your own color palette.
 

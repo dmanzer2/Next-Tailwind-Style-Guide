@@ -1,6 +1,7 @@
 {
-  "name": "Next-Tailwind-style-guide",
+  "name": "nextjs-tailwind-design-system",
   "version": "0.1.0",
+  "description": "A comprehensive design system built with Next.js 15, TypeScript, and Tailwind CSS",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

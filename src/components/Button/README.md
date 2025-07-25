@@ -1,6 +1,6 @@
 # Button Component
 
-A comprehensive, reusable button component that handles all button variations used throughout the Build and Bloom design system.
+A comprehensive, reusable button component that handles all button variations used throughout your design system.
 
 ## Features
 

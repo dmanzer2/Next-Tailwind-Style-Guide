@@ -1,6 +1,6 @@
-# Build and Bloom
+# Next.js Tailwind Style Guide
 
-This is a [Next.js](https://nextjs.org) project built with TypeScript and Tailwind CSS, bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A comprehensive design system and style guide built with [Next.js](https://nextjs.org), TypeScript, and Tailwind CSS. Perfect for starting any new Next.js project with a professional design system.
 
 ## Tech Stack
 
@@ -31,15 +31,76 @@ This project includes a comprehensive style guide that showcases your design sys
 - **Component library** (buttons, forms, cards)
 - **Spacing and layout** guidelines
 
-### Customizing Your Colors
+### Customizing Your Brand
 
 1. **Edit `src/app/globals.css`** to replace the color values with your brand colors
-2. **View the style guide** at http://localhost:3000 to see your changes
-3. **Read `STYLE_GUIDE.md`** for detailed customization instructions
+2. **Update the typography** in `TYPOGRAPHY_GUIDE.md` to match your brand fonts
+3. **Customize components** in `src/components/` to match your design needs
+4. **View the style guide** at http://localhost:3000 to see your changes
+5. **Read `STYLE_GUIDE.md`** for detailed customization instructions
+
+### Quick Start Customization
+
+#### Colors
+The color system is defined in `src/app/globals.css`. Replace the CSS custom properties with your brand colors:
+
+```css
+:root {
+  --primary-50: #eff6ff;   /* Lightest primary */
+  --primary-900: #1e3a8a;  /* Darkest primary */
+  /* ... update all color values ... */
+}
+```
+
+#### Typography
+Update fonts in `src/app/layout.tsx`:
+
+```tsx
+import { YourFont, YourSecondFont } from "next/font/google";
+
+const yourFont = YourFont({
+  variable: "--font-your-font",
+  subsets: ["latin"],
+});
+```
+
+#### Component Styling
+All components use Tailwind classes that reference your color variables, so updating the CSS variables automatically updates all components.
 
 The style guide uses **Tailwind CSS v4**, which configures colors directly in CSS without a traditional config file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What's Included
+
+This template provides:
+
+- **🎨 Complete Design System**: Colors, typography, spacing, and components
+- **🌙 Dark Mode Support**: Built-in theme switching with persistent preferences
+- **♿ Accessibility**: WCAG compliant components with proper ARIA labels
+- **📱 Responsive Design**: Mobile-first approach with responsive components
+- **⚡ Performance**: Optimized fonts, images, and bundle size
+- **🔧 Developer Experience**: TypeScript, ESLint, and hot reload
+- **📚 Documentation**: Comprehensive guides for colors, typography, and components
+
+## Project Structure
+
+```
+src/
+├── app/                 # Next.js 15 App Router
+│   ├── layout.tsx      # Root layout with fonts and theme
+│   ├── page.tsx        # Homepage with style guide
+│   └── globals.css     # Global styles and CSS variables
+├── components/         # Reusable UI components
+│   ├── Button/         # Button component with variants
+│   ├── Link/           # Link component with styling
+│   ├── DropdownButton/ # Dropdown component
+│   └── StyleGuide.tsx  # Interactive style guide
+├── contexts/           # React contexts
+│   └── ThemeContext.tsx # Dark mode theme provider
+└── hooks/              # Custom React hooks
+    └── useRipple.ts    # Material design ripple effect
+```
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load fonts.
 
 ## Learn More
 

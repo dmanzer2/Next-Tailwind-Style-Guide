@@ -1,4 +1,6 @@
-# Build and Bloom Typography Guide
+# Typography Guide
+
+This guide demonstrates the typography scale and font choices for your design system. The current setup uses two complementary fonts that can be easily replaced with your brand fonts.
 
 ## Font Pairing: Outfit + MuseoModerno
 
@@ -81,7 +83,7 @@ Our typography system uses a modern pairing of **Outfit** and **MuseoModerno** t
 ```tsx
 <section className="text-center py-20">
   <h1 className="font-heading text-6xl font-bold text-primary-900 mb-4">
-    Build and Bloom
+    Your Brand Name
   </h1>
   <p className="font-body text-xl text-secondary-600 max-w-2xl mx-auto">
     Create beautiful digital experiences with our modern design system

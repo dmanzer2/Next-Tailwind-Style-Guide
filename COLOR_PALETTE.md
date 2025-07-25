@@ -1,4 +1,6 @@
-# Build and Bloom Color Palette
+# Color Palette Guide
+
+This guide demonstrates the color system for your design system. The colors below are examples that can be easily customized to match your brand.
 
 ## Brand Colors
 
@@ -101,7 +103,7 @@ The palette automatically adapts for dark mode users while maintaining brand con
 ### Hero Section
 ```tsx
 <section className="bg-primary-900 text-white">
-  <h1 className="text-4xl font-bold">Build and Bloom</h1>
+  <h1 className="text-4xl font-bold">Your Brand Name</h1>
   <button className="bg-coral-500 hover:bg-coral-600 text-white px-6 py-3 rounded-lg">
     Get Started
   </button>

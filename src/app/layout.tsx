@@ -15,8 +15,8 @@ const museoModerno = MuseoModerno({
 });
 
 export const metadata: Metadata = {
-  title: "Build and Bloom",
-  description: "A beautiful design system with navy, coral, and sea foam colors",
+  title: "Next.js Tailwind Style Guide",
+  description: "A comprehensive design system built with Next.js and Tailwind CSS",
 };
 
 export default function RootLayout({

@@ -107,7 +107,7 @@ const StyleGuide = () => {
     <div className="p-8 space-y-12 max-w-6xl mx-auto">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading text-6xl font-bold text-primary-900 dark:text-primary-400 mb-2">Build and Bloom</h1>
+          <h1 className="font-heading text-6xl font-bold text-primary-900 dark:text-primary-400 mb-2">Design System</h1>
           <p className="text-secondary-600 dark:text-secondary-500 text-lg font-body">Modern design system with Outfit and MuseoModerno typography</p>
         </div>
         <SimpleDarkModeToggle />
