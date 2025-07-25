@@ -2,30 +2,30 @@
 
 This guide demonstrates the typography scale and font choices for your design system. The current setup uses two complementary fonts that can be easily replaced with your brand fonts.
 
-## Font Pairing: Outfit + MuseoModerno
+## Font Pairing: Inter + Space Grotesk
 
-Our typography system uses a modern pairing of **Outfit** and **MuseoModerno** that creates a perfect balance between contemporary geometric design and distinctive display typography.
+Our typography system uses a modern pairing of **Inter** and **Space Grotesk** that creates a perfect balance between exceptional readability and distinctive character.
 
 ### Primary Fonts
 
-#### Outfit (Sans-serif)
-- **Use for**: Body text, UI elements, navigation, subheadings
-- **Characteristics**: Modern geometric sans-serif, highly legible, friendly
+#### Inter (Sans-serif)
+- **Use for**: Body text, UI elements, navigation, subheadings, captions
+- **Characteristics**: Optimized for legibility, neutral, highly readable
 - **Font weight range**: 100 (Thin) to 900 (Black)
-- **Special features**: Low contrast, optimized for digital screens
+- **Special features**: Designed specifically for computer screens, excellent readability at small sizes
 
-#### MuseoModerno (Display)
+#### Space Grotesk (Display/Heading)
 - **Use for**: Headlines, hero text, brand elements, attention-grabbing text
-- **Characteristics**: Contemporary, distinctive, geometric with personality
-- **Font weight range**: 100 (Thin) to 900 (Black)
-- **Special features**: Unique character shapes, modern flair
+- **Characteristics**: Proportional, distinctive, modern geometric with character
+- **Font weight range**: 300 (Light) to 700 (Bold)
+- **Special features**: Based on Space Mono, optimized for display use, unique personality
 
 ## Typography Classes
 
 ### Heading Styles
 ```css
 .font-heading {
-  font-family: var(--font-museo-moderno);
+  font-family: var(--font-space-grotesk);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -35,7 +35,7 @@ Our typography system uses a modern pairing of **Outfit** and **MuseoModerno** t
 ### Subheading Styles
 ```css
 .font-subheading {
-  font-family: var(--font-outfit);
+  font-family: var(--font-inter);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.015em;
@@ -45,7 +45,7 @@ Our typography system uses a modern pairing of **Outfit** and **MuseoModerno** t
 ### Body Text
 ```css
 .font-body {
-  font-family: var(--font-outfit);
+  font-family: var(--font-inter);
   font-weight: 400;
   line-height: 1.6;
 }
@@ -54,7 +54,7 @@ Our typography system uses a modern pairing of **Outfit** and **MuseoModerno** t
 ### Caption/Labels
 ```css
 .font-caption {
-  font-family: var(--font-outfit);
+  font-family: var(--font-inter);
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.05em;

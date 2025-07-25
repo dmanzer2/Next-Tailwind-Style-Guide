@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Outfit, MuseoModerno } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.scss";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const museoModerno = MuseoModerno({
-  variable: "--font-museo-moderno",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
 });
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${museoModerno.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
         {children}
       </body>
