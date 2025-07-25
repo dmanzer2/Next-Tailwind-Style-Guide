@@ -1,0 +1,571 @@
+@import "tailwindcss";
+
+// =============================================================================
+// CSS Variables & Theme Configuration
+// =============================================================================
+
+:root {
+  // Base colors - light theme
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  // Primary color palette - Navy Blue
+  --primary-50: #f0f2ff;
+  --primary-100: #e6eaff;
+  --primary-200: #d1d9ff;
+  --primary-300: #a8b8ff;
+  --primary-400: #7a8dff;
+  --primary-500: #4c63ff;
+  --primary-600: #2940e6;
+  --primary-700: #20299c;
+  --primary-800: #1a2280;
+  --primary-900: #16225c;
+  --primary-950: #0f1842;
+  
+  // Secondary color palette - Bright Blue
+  --secondary-50: #f0f8ff;
+  --secondary-100: #e0f2ff;
+  --secondary-200: #bae6ff;
+  --secondary-300: #7dd3ff;
+  --secondary-400: #30d2ff;
+  --secondary-500: #0273ff;
+  --secondary-600: #0066e6;
+  --secondary-700: #0055cc;
+  --secondary-800: #0044b3;
+  --secondary-900: #003399;
+  --secondary-950: #002266;
+  
+  // Semantic colors
+  --success: #86ffe7;   // Sea Foam for success
+  --warning: #f15a28;   // Coral for warnings
+  --error: #f15a28;     // Coral for errors
+  --info: #30d2ff;      // Light Blue for info
+  
+  // Accent colors
+  --coral-50: #fff5f3;
+  --coral-100: #ffe8e1;
+  --coral-200: #ffd1c7;
+  --coral-300: #ffab99;
+  --coral-400: #ff7d5c;
+  --coral-500: #f15a28;
+  --coral-600: #e04a1f;
+  --coral-700: #c03a16;
+  --coral-800: #a02f0f;
+  --coral-900: #80240a;
+  --coral-950: #4d1505;
+  
+  --seafoam-50: #f0fffe;
+  --seafoam-100: #ccfff8;
+  --seafoam-200: #99fff1;
+  --seafoam-300: #5cffe9;
+  --seafoam-400: #86ffe7;
+  --seafoam-500: #26ffd9;
+  --seafoam-600: #00e6c3;
+  --seafoam-700: #00b399;
+  --seafoam-800: #008066;
+  --seafoam-900: #004d33;
+  --seafoam-950: #002619;
+  
+  --lavender-50: #f8f8ff;
+  --lavender-100: #f0f0ff;
+  --lavender-200: #e6e6ff;
+  --lavender-300: #d1d1ff;
+  --lavender-400: #a8abff;
+  --lavender-500: #6e71a8;
+  --lavender-600: #5c5f99;
+  --lavender-700: #4a4d80;
+  --lavender-800: #383b66;
+  --lavender-900: #26294d;
+  --lavender-950: #1a1c33;
+  
+  // Surface colors
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --border: #e2e8f0;
+  --border-muted: #f1f5f9;
+}
+
+// =============================================================================
+// Dark Theme Variables
+// =============================================================================
+
+.dark {
+  // Base colors - dark theme
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --surface: #171717;
+  --surface-muted: #262626;
+  --border: #404040;
+  --border-muted: #525252;
+  
+  // Primary colors - inverted for dark theme
+  --primary-50: #0f1842;
+  --primary-100: #16225c;
+  --primary-200: #1a2280;
+  --primary-300: #20299c;
+  --primary-400: #2940e6;
+  --primary-500: #4c63ff;
+  --primary-600: #7a8dff;
+  --primary-700: #a8b8ff;
+  --primary-800: #d1d9ff;
+  --primary-900: #e6eaff;
+  --primary-950: #f0f2ff;
+  
+  // Secondary colors - inverted for dark theme
+  --secondary-50: #002266;
+  --secondary-100: #003399;
+  --secondary-200: #0044b3;
+  --secondary-300: #0055cc;
+  --secondary-400: #0066e6;
+  --secondary-500: #0273ff;
+  --secondary-600: #30d2ff;
+  --secondary-700: #7dd3ff;
+  --secondary-800: #bae6ff;
+  --secondary-900: #e0f2ff;
+  --secondary-950: #f0f8ff;
+  
+  // Coral colors - slightly adjusted for dark theme
+  --coral-50: #4d1505;
+  --coral-100: #80240a;
+  --coral-200: #a02f0f;
+  --coral-300: #c03a16;
+  --coral-400: #e04a1f;
+  --coral-500: #f15a28;
+  --coral-600: #ff7d5c;
+  --coral-700: #ffab99;
+  --coral-800: #ffd1c7;
+  --coral-900: #ffe8e1;
+  --coral-950: #fff5f3;
+  
+  // Seafoam colors - slightly adjusted for dark theme
+  --seafoam-50: #002619;
+  --seafoam-100: #004d33;
+  --seafoam-200: #008066;
+  --seafoam-300: #00b399;
+  --seafoam-400: #00e6c3;
+  --seafoam-500: #26ffd9;
+  --seafoam-600: #86ffe7;
+  --seafoam-700: #5cffe9;
+  --seafoam-800: #99fff1;
+  --seafoam-900: #ccfff8;
+  --seafoam-950: #f0fffe;
+  
+  // Lavender colors - slightly adjusted for dark theme
+  --lavender-50: #1a1c33;
+  --lavender-100: #26294d;
+  --lavender-200: #383b66;
+  --lavender-300: #4a4d80;
+  --lavender-400: #5c5f99;
+  --lavender-500: #6e71a8;
+  --lavender-600: #a8abff;
+  --lavender-700: #d1d1ff;
+  --lavender-800: #e6e6ff;
+  --lavender-900: #f0f0ff;
+  --lavender-950: #f8f8ff;
+}
+
+// =============================================================================
+// Base Styles
+// =============================================================================
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  line-height: 1.6;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+// =============================================================================
+// Typography System
+// =============================================================================
+
+// Typography mixins for reusability
+@mixin font-base {
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.font-heading {
+  @include font-base;
+  font-family: var(--font-museo-moderno), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.font-subheading {
+  @include font-base;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.font-body {
+  @include font-base;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.font-caption {
+  @include font-base;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+// =============================================================================
+// Color Utility Classes
+// =============================================================================
+
+// Color generation mixins for efficiency
+@mixin generate-bg-colors($name, $shades) {
+  @each $shade, $value in $shades {
+    .bg-#{$name}-#{$shade} { 
+      background-color: var(--#{$name}-#{$shade}); 
+    }
+  }
+}
+
+@mixin generate-text-colors($name, $shades) {
+  @each $shade, $value in $shades {
+    .text-#{$name}-#{$shade} { 
+      color: var(--#{$name}-#{$shade}); 
+    }
+  }
+}
+
+// Define shade maps for efficient generation
+$primary-shades: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
+$secondary-shades: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
+$coral-shades: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
+$seafoam-shades: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
+$lavender-shades: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950);
+
+// Generate background color classes
+@each $shade in $primary-shades {
+  .bg-primary-#{$shade} { background-color: var(--primary-#{$shade}); }
+}
+
+@each $shade in $secondary-shades {
+  .bg-secondary-#{$shade} { background-color: var(--secondary-#{$shade}); }
+}
+
+@each $shade in $coral-shades {
+  .bg-coral-#{$shade} { background-color: var(--coral-#{$shade}); }
+}
+
+@each $shade in $seafoam-shades {
+  .bg-seafoam-#{$shade} { background-color: var(--seafoam-#{$shade}); }
+}
+
+@each $shade in $lavender-shades {
+  .bg-lavender-#{$shade} { background-color: var(--lavender-#{$shade}); }
+}
+
+// Generate text color classes
+@each $shade in $primary-shades {
+  .text-primary-#{$shade} { color: var(--primary-#{$shade}); }
+}
+
+@each $shade in $secondary-shades {
+  .text-secondary-#{$shade} { color: var(--secondary-#{$shade}); }
+}
+
+// Essential text colors
+.text-coral-500 { color: var(--coral-500); }
+.text-coral-600 { color: var(--coral-600); }
+.text-coral-900 { color: var(--coral-900); }
+.text-seafoam-400 { color: var(--seafoam-400); }
+.text-seafoam-500 { color: var(--seafoam-500); }
+.text-seafoam-900 { color: var(--seafoam-900); }
+.text-lavender-500 { color: var(--lavender-500); }
+.text-lavender-600 { color: var(--lavender-600); }
+
+// =============================================================================
+// Hover States
+// =============================================================================
+
+// Primary color hover states
+.hover\:bg-primary-50:hover { background-color: var(--primary-50); }
+.hover\:bg-primary-100:hover { background-color: var(--primary-100); }
+.hover\:bg-primary-200:hover { background-color: var(--primary-200); }
+.hover\:bg-primary-300:hover { background-color: var(--primary-300); }
+.hover\:bg-primary-400:hover { background-color: var(--primary-400); }
+.hover\:bg-primary-500:hover { background-color: var(--primary-500); }
+.hover\:bg-primary-600:hover { background-color: var(--primary-600); }
+.hover\:bg-primary-700:hover { background-color: var(--primary-700); }
+.hover\:bg-primary-800:hover { background-color: var(--primary-800); }
+.hover\:bg-primary-900:hover { background-color: var(--primary-900); }
+.hover\:bg-primary-950:hover { background-color: var(--primary-950); }
+
+// Secondary color hover states
+.hover\:bg-secondary-50:hover { background-color: var(--secondary-50); }
+.hover\:bg-secondary-100:hover { background-color: var(--secondary-100); }
+.hover\:bg-secondary-200:hover { background-color: var(--secondary-200); }
+.hover\:bg-secondary-300:hover { background-color: var(--secondary-300); }
+.hover\:bg-secondary-400:hover { background-color: var(--secondary-400); }
+.hover\:bg-secondary-500:hover { background-color: var(--secondary-500); }
+.hover\:bg-secondary-600:hover { background-color: var(--secondary-600); }
+.hover\:bg-secondary-700:hover { background-color: var(--secondary-700); }
+.hover\:bg-secondary-800:hover { background-color: var(--secondary-800); }
+.hover\:bg-secondary-900:hover { background-color: var(--secondary-900); }
+.hover\:bg-secondary-950:hover { background-color: var(--secondary-950); }
+
+// Coral color hover states
+.hover\:bg-coral-50:hover { background-color: var(--coral-50); }
+.hover\:bg-coral-100:hover { background-color: var(--coral-100); }
+.hover\:bg-coral-200:hover { background-color: var(--coral-200); }
+.hover\:bg-coral-300:hover { background-color: var(--coral-300); }
+.hover\:bg-coral-400:hover { background-color: var(--coral-400); }
+.hover\:bg-coral-500:hover { background-color: var(--coral-500); }
+.hover\:bg-coral-600:hover { background-color: var(--coral-600); }
+.hover\:bg-coral-700:hover { background-color: var(--coral-700); }
+.hover\:bg-coral-800:hover { background-color: var(--coral-800); }
+.hover\:bg-coral-900:hover { background-color: var(--coral-900); }
+.hover\:bg-coral-950:hover { background-color: var(--coral-950); }
+
+// Seafoam color hover states
+.hover\:bg-seafoam-50:hover { background-color: var(--seafoam-50); }
+.hover\:bg-seafoam-100:hover { background-color: var(--seafoam-100); }
+.hover\:bg-seafoam-200:hover { background-color: var(--seafoam-200); }
+.hover\:bg-seafoam-300:hover { background-color: var(--seafoam-300); }
+.hover\:bg-seafoam-400:hover { background-color: var(--seafoam-400); }
+.hover\:bg-seafoam-500:hover { background-color: var(--seafoam-500); }
+.hover\:bg-seafoam-600:hover { background-color: var(--seafoam-600); }
+.hover\:bg-seafoam-700:hover { background-color: var(--seafoam-700); }
+.hover\:bg-seafoam-800:hover { background-color: var(--seafoam-800); }
+.hover\:bg-seafoam-900:hover { background-color: var(--seafoam-900); }
+.hover\:bg-seafoam-950:hover { background-color: var(--seafoam-950); }
+
+// Lavender color hover states
+.hover\:bg-lavender-50:hover { background-color: var(--lavender-50); }
+.hover\:bg-lavender-100:hover { background-color: var(--lavender-100); }
+.hover\:bg-lavender-200:hover { background-color: var(--lavender-200); }
+.hover\:bg-lavender-300:hover { background-color: var(--lavender-300); }
+.hover\:bg-lavender-400:hover { background-color: var(--lavender-400); }
+.hover\:bg-lavender-500:hover { background-color: var(--lavender-500); }
+.hover\:bg-lavender-600:hover { background-color: var(--lavender-600); }
+.hover\:bg-lavender-700:hover { background-color: var(--lavender-700); }
+.hover\:bg-lavender-800:hover { background-color: var(--lavender-800); }
+.hover\:bg-lavender-900:hover { background-color: var(--lavender-900); }
+.hover\:bg-lavender-950:hover { background-color: var(--lavender-950); }
+
+// Gray hover states for ghost buttons
+.hover\:bg-gray-50:hover { background-color: #f9fafb; }
+.hover\:bg-gray-100:hover { background-color: #f3f4f6; }
+.hover\:bg-gray-200:hover { background-color: #e5e7eb; }
+.hover\:bg-gray-300:hover { background-color: #d1d5db; }
+.hover\:bg-gray-400:hover { background-color: #9ca3af; }
+.hover\:bg-gray-500:hover { background-color: #6b7280; }
+.hover\:bg-gray-600:hover { background-color: #4b5563; }
+.hover\:bg-gray-700:hover { background-color: #374151; }
+.hover\:bg-gray-800:hover { background-color: #1f2937; }
+.hover\:bg-gray-900:hover { background-color: #111827; }
+
+// Dark mode gray hover states
+.dark .hover\:bg-gray-400:hover { background-color: #9ca3af; }
+.dark .hover\:bg-gray-500:hover { background-color: #6b7280; }
+.dark .hover\:bg-gray-600:hover { background-color: #4b5563; }
+.dark .hover\:bg-gray-700:hover { background-color: #374151; }
+.dark .hover\:bg-gray-800:hover { background-color: #1f2937; }
+.dark .hover\:bg-gray-900:hover { background-color: #111827; }
+
+// Specific fix for outline button dark mode hover
+.dark button[class*="border-2"][class*="border-solid"]:hover,
+.dark a[class*="border-2"][class*="border-solid"]:hover {
+  background-color: #374151 !important;
+}
+
+// Primary hover states for outline buttons  
+.hover\:bg-primary-50:hover { background-color: var(--primary-50); }
+.hover\:bg-primary-950:hover { background-color: var(--primary-950); }
+.dark .hover\:bg-primary-950:hover { background-color: var(--primary-950); }
+
+// =============================================================================
+// Dark Mode Variants
+// =============================================================================
+
+.dark {
+  .dark\:text-primary-50 { color: var(--primary-50); }
+  .dark\:text-primary-100 { color: var(--primary-100); }
+  .dark\:text-primary-200 { color: var(--primary-200); }
+  .dark\:text-primary-300 { color: var(--primary-300); }
+  .dark\:text-primary-400 { color: var(--primary-400); }
+  .dark\:text-secondary-300 { color: var(--secondary-300); }
+  .dark\:text-secondary-400 { color: var(--secondary-400); }
+}
+
+// =============================================================================
+// Component-Specific Classes
+// =============================================================================
+
+// Toggle component classes
+.bg-surface { background-color: var(--surface); }
+.border-border { border-color: var(--border); }
+.hover\:border-primary-400:hover { border-color: var(--primary-400); }
+.focus\:ring-primary-500:focus { --tw-ring-color: var(--primary-500); }
+.from-coral-400 { --tw-gradient-from: var(--coral-400); }
+.to-coral-600 { --tw-gradient-to: var(--coral-600); }
+.from-lavender-400 { --tw-gradient-from: var(--lavender-400); }
+.to-lavender-600 { --tw-gradient-to: var(--lavender-600); }
+.text-foreground { color: var(--foreground); }
+.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to)); }
+.translate-x-0 { 
+  --tw-translate-x: 0px; 
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); 
+}
+.translate-x-8 { 
+  --tw-translate-x: 2rem; 
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); 
+}
+
+// =============================================================================
+// Button System
+// =============================================================================
+
+// Button base mixin
+@mixin btn-base {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.btn-primary {
+  @include btn-base;
+  background-color: #2940e6; // primary-600 from light theme
+  color: white;
+
+  &:hover {
+    background-color: #20299c; // primary-700 from light theme
+    transform: scale(1.05);
+  }
+}
+
+.btn-secondary {
+  @include btn-base;
+  background-color: #bae6ff; // secondary-200 from light theme
+  color: #003399; // secondary-900 from light theme
+
+  &:hover {
+    background-color: #7dd3ff; // secondary-300 from light theme
+    transform: scale(1.05);
+  }
+}
+
+.btn-primary-icon {
+  @include btn-base;
+  padding: 0; // Override the btn-base padding for icon buttons
+  background-color: #2940e6; // primary-600 from light theme
+  color: white;
+
+  &:hover {
+    background-color: #20299c; // primary-700 from light theme
+    transform: scale(1.05);
+  }
+}
+
+// Outline button/link specific styles
+button[class*="border-2"][class*="border-solid"],
+a[class*="border-2"][class*="border-solid"] {
+  color: #1f2937; // text-gray-800 for light mode
+}
+
+.dark button[class*="border-2"][class*="border-solid"],
+.dark a[class*="border-2"][class*="border-solid"] {
+  color: white; // white text for dark mode
+}
+
+// Note: Hover states now handled by Tailwind classes in components
+
+// Link variant styles
+.underline { text-decoration: underline; }
+.hover\:no-underline:hover { text-decoration: none; }
+
+// Hover text colors for outline buttons
+.hover\:text-gray-900:hover { color: #111827; }
+.hover\:text-white:hover { color: white; }
+.dark .hover\:text-white:hover { color: white; }
+
+// Button dropdown option hover effect
+.btn-dropdown-options {
+  &:hover {
+    border-radius: 5px;
+    outline: 2px solid #eee;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, .3);
+  }
+}
+
+// =============================================================================
+// Card System
+// =============================================================================
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+// =============================================================================
+// Form Elements
+// =============================================================================
+
+.input-field {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 200ms, box-shadow 200ms;
+  width: 100%;
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px var(--primary-500);
+  }
+}
+
+
+// =============================================================================
+// Animations
+// =============================================================================
+
+// Ripple effect
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+  transition: transform 200ms ease-in-out;
+}
+
+// Global button hover scale effect
+button,
+.btn-primary,
+.btn-secondary {
+  &:hover {
+    transform: scale(1.05);
+  }
+}
